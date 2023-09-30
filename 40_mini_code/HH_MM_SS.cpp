@@ -1,7 +1,7 @@
     #include <iostream>
     #include <string>
     using namespace std;
-
+//xin chào tôi sẽ comment vào đây
 bool isInteger(const string& str) {
     // Kiểm tra từng ký tự trong chuỗi
     for (char c : str) {
