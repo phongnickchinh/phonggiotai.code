@@ -1,20 +1,12 @@
-#include <iostream>
-#include <string>
-#include <cctype>
+#include<bits/stdc++.h>
 using namespace std;
 
+
 int main() {
-    string text;
-    string upper_text="";
-
-    while (getline(cin, text)) {
-
-        for (char &c : text) {
-
-            c = toupper(c);
-            upper_text+=c;
-        }
-}
-        cout << upper_text << endl;
+    string input_text;
+    while (getline(cin, input_text)) {
+        for (char &c : input_text) c = toupper(c);
+        cout << input_text << endl;
+    }
     return 0;
 }
