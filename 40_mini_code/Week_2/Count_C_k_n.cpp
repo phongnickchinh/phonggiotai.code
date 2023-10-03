@@ -4,16 +4,16 @@ using namespace std;
 const int MOD = 1e9 + 7;
 int Remember_ar[N][N];
 
+//Sử dụng mảng 2 chiều lưu kết quả:
 void C_k_n( int k, int n){
-
 for (int i = 0; i <=n; i++){
     Remember_ar[0][i]=1;
 }
-    for (int i = 1; i <=n; i++){
-        while (k<=i){
-            if(k==i) Remember_ar[k][i]=1;
-            else if(k!=i&&k==1) Remember_ar[k][i]=i;
-            else Remember_ar[k][i]=(Remember_ar[k-1][i-1]+Remember_ar[k][i-1]) % MOD;
+ for (int i = 1; i <=n; i++){
+    while (k<=i){
+        if(k==i) Remember_ar[k][i]=1;
+        else if(k!=i&&k==1) Remember_ar[k][i]=i;
+        else Remember_ar[k][i]=(Remember_ar[k-1][i-1]+Remember_ar[k][i-1]) % MOD;
         k++;
         }
     k=1;
