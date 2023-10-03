@@ -1,3 +1,5 @@
+/*nhập vào số phần tử mảng, các phần tử, kết thúc nhập mảng bằng dấu *
+nhập vào các lệnh find-max, find-min, find-max-segment m n, sum kết thúc bằng dấu *** */
 #include<bits/stdc++.h>
 
 using namespace std;
