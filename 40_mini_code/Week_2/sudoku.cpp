@@ -1,23 +1,23 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-const int N = 9; // Size of the Sudoku grid
 
-// Function to check if a number is safe to place in a given cell
-bool isSafe(int grid[N][N], int row, int col, int num) {
-    // Check if the number is not already in the current row or column
-    for (int i = 0; i < N; i++) {
-        if (grid[row][i] == num || grid[i][col] == num) {
+
+// kiểm tra với number nhập vào ma trận ở vị trí row và colunm thì có hợp lệ hay không:
+bool box_safe(int grid[9][9], int row, int colunm, int number) {
+//kiểm tra trên hàng cột
+    for (int i = 0; i < 9; i++) {
+        if (grid[row][i] == number || grid[i][colunm] == number) {
             return false;
         }
     }
 
-    // Check if the number is not already in the current 3x3 subgrid
-    int startRow = row - row % 3;
-    int startCol = col - col % 3;
+//kiểm tra trên ô 3x3
+    int starrow = row - row % 3;
+    int starcolunm = colunm - colunm % 3;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
-            if (grid[i + startRow][j + startCol] == num) {
+            if (grid[i + starrow][j + starcolunm] == number) {
                 return false;
             }
         }
@@ -25,63 +25,50 @@ bool isSafe(int grid[N][N], int row, int col, int num) {
 
     return true;
 }
-
-// Function to solve the Sudoku puzzle using backtracking and count solutions
-int solveSudokuCount(int grid[N][N]) {
-    int row, col;
-
-    // Find the first empty cell in the grid
-    bool isEmpty = false;
-    for (row = 0; row < N; row++) {
-        for (col = 0; col < N; col++) {
-            if (grid[row][col] == 0) {
-                isEmpty = true;
+/*Hàm tìm và đếm kết quả khả thi, input là nguyên cái ma trận 9x9, hơi cồng kềnh
+so với iuput là vị trí hàng và cột
+Tuy nhiên giảm bớt được bước tìm hàng và cột tiếp theo,
+thay vào đó là tìm luôn empty_box tiếp theo*/
+int Find_solution(int grid[9][9]){
+    int row, colunm;
+    bool empty_box=false; 
+    for(row=0; row<9; row++){      //Tìm đến vị trsi trống. Trong cây đệ quy: nếu là gốc, vị trí trống sẽ là đầu tiên, nếu là cành, vị trí trống sẽ là vị trí tiếp theo cần điền:
+        for( colunm=0; colunm<9; colunm++){
+            if(grid[row][colunm]==0){
+                empty_box=true;
                 break;
             }
         }
-        if (isEmpty) {
-            break;
+        if(empty_box) break;
+    }
+
+    //nếu không còn empty_box, tức là sudoku đã được giải xong, trả về 1 kết quả:
+    if(!empty_box) return 1;
+
+    int count=0;
+
+    for(int v=1; v<=9; v++){
+        //thử các số vào empty_box tìm được
+        if(box_safe(grid, row, colunm, v)){
+            grid[row][colunm]=v;
+            
+            //nếu hàm gọi tới lá, biến count+=1, nếu chưa phải count+=0:
+            count+=Find_solution(grid);
+            grid[row][colunm]=0; //Backtracking đến empty_box tiếp theo
         }
     }
-
-    // If there are no empty cells, a solution is found
-    if (!isEmpty) {
-        return 1;
-    }
-
-    int count = 0;
-
-    // Try placing numbers 1 to 9 in the empty cell
-    for (int num = 1; num <= 9; num++) {
-        if (isSafe(grid, row, col, num)) {
-            grid[row][col] = num;
-
-            // Recursively solve the rest of the puzzle and count solutions
-            count += solveSudokuCount(grid);
-
-            // Backtrack
-            grid[row][col] = 0;
-        }
-    }
-
     return count;
 }
 
-int main() {
-    int grid[N][N];
+int main(){
 
-    // Input the Sudoku grid
-    for (int i = 0; i < N; i++) {
-        for (int j = 0; j < N; j++) {
+int grid[9][9];
+    for(int i = 0; i < 9; i++){
+        for(int j = 0; j < 9; j++){
             cin >> grid[i][j];
         }
     }
 
-    // Count the number of Sudoku solutions
-    int solutionCount = solveSudokuCount(grid);
-
-    // Output the number of solutions
-    cout << solutionCount << endl;
-
+    cout<<Find_solution(grid);
     return 0;
 }
