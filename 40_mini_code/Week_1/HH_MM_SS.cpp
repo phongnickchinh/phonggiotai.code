@@ -8,7 +8,7 @@ bool isInteger(const string& str) {
         if (!isdigit(c)) {
             return false; // Nếu có ký tự không phải chữ số, trả về false
         }
-    }
+    }   
     return true; // Nếu toàn bộ chuỗi đều là chữ số, trả về true
 }
     int main() {
