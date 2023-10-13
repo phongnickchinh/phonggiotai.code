@@ -1,6 +1,7 @@
     #include <iostream>
     using namespace std;
 
+    //tiền điện giá hiện tại
     double tien_dien_cu(int cong_to) {
         double tien_dien = 0;
         int muc;
@@ -38,7 +39,7 @@
         tien_dien += cong_to * 3015;
         return tien_dien * 1.1;
     }
-
+    //Tiền điện dự kiến thay đổi
     double tien_dien_moi(int cong_to) {
         double tien_dien = 0;
 

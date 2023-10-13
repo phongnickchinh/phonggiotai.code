@@ -5,6 +5,7 @@ const int MOD = 1e9 + 7;
 int Remember_ar[N][N];
 //ở đây dùng đệ quy có nhớ để tính C(k,n) bằng cách tìm các giá trị từ C(0,0) lưu vào Remember_ar
 
+//tính toán tổ hợp chập k của n:
 void C_k_n( int k, int n){
 for (int i = 0; i <=n; i++){
     Remember_ar[0][i]=1; 
@@ -26,7 +27,7 @@ void in_ra(int k, int n){
 int main(){
     int k,n;
     cin>>k>>n;
-    C_k_n(k,n);
+    C_k_n(k,n);//tính toán tổ hợp chập k của n:
     in_ra(k,n);
     return 0;
 }

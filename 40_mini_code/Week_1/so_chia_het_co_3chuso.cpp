@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-
+//tìm số có 3 chữ số chia hết cho n
 void timsochiahet(int n){
     int sochiahet_dautien=0;
     if(n>=100) sochiahet_dautien=n;

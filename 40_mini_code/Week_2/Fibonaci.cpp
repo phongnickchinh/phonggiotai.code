@@ -2,7 +2,7 @@
 
 using namespace std;
 
-//đệ quy không nhớ để xử lí số thứ n-1
+//đệ quy không nhớ để tìm số fibonacci thứ n-1
 int so_thu (int number){
 
     if(number==0) return 0;

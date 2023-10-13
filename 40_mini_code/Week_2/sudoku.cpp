@@ -61,7 +61,7 @@ int Find_solution(int grid[9][9]){
 }
 
 int main(){
-
+//nhập vào ma trận đầu vào 9x9
 int grid[9][9];
     for(int i = 0; i < 9; i++){
         for(int j = 0; j < 9; j++){

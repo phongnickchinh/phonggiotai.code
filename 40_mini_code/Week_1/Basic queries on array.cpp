@@ -3,12 +3,14 @@ nhập vào các lệnh find-max, find-min, find-max-segment m n, sum kết thú
 #include<bits/stdc++.h>
 
 using namespace std;
+
+//tìm phần tử max của dãy:
 int find_max(vector<int> number_list){
     int max=number_list[0];
     for (const int  &number : number_list) max=max>number?max:number;
     return max; 
 }
-
+//tìm phần tử min của dãy:
 int find_min(vector<int> number_list) {
     if (number_list.empty()) {
         return 0; }
@@ -20,19 +22,20 @@ int find_min(vector<int> number_list) {
 
     return min;
 }
-
+//tìm phần tử max trong đoạn [f,l]:
 int find_max_segment(vector<int> number_list, int first, int last){
     int max=number_list[first-1];
     for (int i=first-1; i<=last-1; i++) max=max>number_list[i]?max:number_list[i];
     return max; 
 }
 
+//tìm phần tử min trong đoạn [f.l]
 int find_min_segment(vector<int> number_list, int first, int last){
     int min=number_list[first-1];
     for (int i=first-1; i<=last-1; i++) min=min<number_list[i]?min:number_list[i];
     return min; 
 }
-
+//tính tổng dãy:
 int sum(vector<int> number_list){
     int thissum=0;
     for (const int  &number : number_list) thissum+=number;

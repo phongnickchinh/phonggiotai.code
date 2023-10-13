@@ -46,7 +46,7 @@ int main(){
             preorder(root);
             break;
         }
-
+        //câu lệnh insert n:
         if(command=="insert"){
             int n; cin>>n;
             insert_into_bst(root, n);

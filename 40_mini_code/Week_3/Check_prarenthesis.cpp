@@ -20,7 +20,7 @@ int check(string x){
     return 1;
 }
 int main(){
-  
+  //nhập vào chuỗi các dấu ngoặc:
     string input;
     cin>>input;
     cout<<check(input);
