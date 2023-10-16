@@ -3,7 +3,8 @@ using namespace std;
 #define N 1000
 const int MOD = 1e9 + 7;
 int Remember_ar[N][N];
-//ở đây dùng đệ quy có nhớ để tính C(k,n) bằng cách tìm các giá trị từ C(0,0) lưu vào Remember_ar
+//ở đây dùng đệ quy có nhớ để tính C(k,n) bằng cách tìm các giá trị từ C(0,0) 
+//lưu vào Remember_ar
 
 //tính toán tổ hợp chập k của n:
 void C_k_n( int k, int n){
