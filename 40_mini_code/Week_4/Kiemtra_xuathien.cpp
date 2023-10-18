@@ -13,7 +13,7 @@ int main(){
         cin>>number;
         list.push_back(number);
     }
-        //giờ tôi đang học lịch sử Đảng các bạn ạ
+
     for(int i=0;i<n;i++){
         appear_list[list[i]].push_back(i);
     }
