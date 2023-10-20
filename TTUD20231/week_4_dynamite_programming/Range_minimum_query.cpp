@@ -13,18 +13,20 @@ void preprocessing(int n, vector<int> input, int save[30][1000000]){
         for(int j=0; j<n; j++){
             if(save[i-1][j+(int)pow(2,i)-1]==-1) save[i][j]=save[i-1][j];
             else {
-                if(save[i-1][j]<=save[i-1][j+(int)pow(2,i)-1]) save[i][j]=save[i-1][j];
-                else save[i][j]=save[i-1][j+(int)pow(2,i)-1];
+                if(save[i-1][j]<=save[i-1][j+(int)pow(2,i-1)-1]) save[i][j]=save[i-1][j];
+                else save[i][j]=save[i-1][j+(int)pow(2,i-1)-1];
                 }
         }
     }
 }
 
 int findmin(int a, int b){
-    int index=(int)log2(b);
+    int index=(int)log2(b-a);
+    int solution=0;
 
-    if(save[a][(int)pow(2,index)]<=save[b-(int)pow(2,index)+1][(int)pow(2,index)]) return save[a][(int)pow(2,index)];
-    else return save[b-(int)pow(2,index)+1][(int)pow(2,index)];
+    if(save[index][a]<=save[index][b-(int)pow(2,index)+1]) solution=save[index][a];
+    else  solution= save[index][b-(int)pow(2,index)+1];
+    return solution;
 }
 
 int main(){
@@ -55,5 +57,3 @@ int main(){
 
 
 }
-
-
