@@ -42,7 +42,6 @@ int main(){
     for(int i=0; i<n;i++){
         scanf("%d", &list[i]);
     }
-
     preprocessing(n,list,save);
 
     cin>>m;
