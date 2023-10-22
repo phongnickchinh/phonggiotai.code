@@ -13,7 +13,7 @@ int main(){
         cin>>number;
         list.push_back(number);
     }
-
+    //map này để đánh dấu vị trí xuất hiện dầu tiên của 1 số trong dãy nhập vào:
     for(int i=0;i<n;i++){
         appear_list[list[i]].push_back(i);
     }
