@@ -8,10 +8,8 @@ using namespace std;
 //số phần tử của dãy dài nhất tính đến phần tử thứ i
 
 //tìm số phần tử của dãy con giống nhau dài nhất
-int longestCommonSubsequence(vector<int>& nums1, vector<int>& nums2)
+int longestCommonSubsequence(int nums1[], int nums2[], int n, int m)
 {
-    int n = nums1.size();
-    int m = nums2.size();
 
     // initializing 2 vectors of size m
     vector<int> prev(m + 1, 0), cur(m + 1, 0);
@@ -41,17 +39,12 @@ int longestCommonSubsequence(vector<int>& nums1, vector<int>& nums2)
 
 int main()
 {
-    vector<int> nums1, nums2;
-    int n, m, temp;
-    cin>>n>>m;
-    for(int i=0;i<n; i++) {
-        scanf("%d", &temp);
-        nums1.push_back(temp);
-    }
-    for(int i=0;i<m; i++) {
-        scanf("%d", &temp);
-        nums2.push_back(temp);
-    }
-    cout <<longestCommonSubsequence(nums1, nums2);
+    int n, m;
+    cin>>n>>m;    
+    int nums1[n], nums2[m];
+
+    for(int i=0;i<n; i++) scanf("%d", &nums1[i]);
+    for(int i=0;i<m; i++) scanf("%d", &nums2[i]);
+    cout <<longestCommonSubsequence(nums1, nums2,n,m);
     return 0;
 }
