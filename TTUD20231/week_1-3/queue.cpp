@@ -14,7 +14,7 @@ int main(){
         }
         if(key=="POP"){
             ppp.push_back(number_list.top());
-            ppp.push_back("/n");
+            ppp.push_back('/n');
             number_list.pop();
         }
     }
