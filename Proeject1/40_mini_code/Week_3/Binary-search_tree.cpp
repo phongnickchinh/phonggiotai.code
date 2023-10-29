@@ -35,7 +35,6 @@ void preorder(TN*root){
         cout<<root->value<<" "; 
         preorder(root->left);                                
         preorder(root->right);
-    
 }
 
 int main(){
