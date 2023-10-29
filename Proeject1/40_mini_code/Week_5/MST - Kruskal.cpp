@@ -1,3 +1,4 @@
+//Phạm Văn Phong 20215448_29/10/2023
 #include <bits/stdc++.h>
 using namespace std;
 //sử dụng cấu trúc dữ liệu Disjoin Set Union, là một tập hợp gồm các nút có nút cha
