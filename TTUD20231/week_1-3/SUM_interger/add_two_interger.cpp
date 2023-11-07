@@ -4,6 +4,7 @@ using namespace std;
 int main()
 {
     unsigned long long a, b;
+    
     cin >> a >> b;
     unsigned long long a1, a2, b1, b2,c,d;
     a2 = a % 10;
