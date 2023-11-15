@@ -7,10 +7,6 @@ public:
 int start, end;
 public:
 secment(int s, int e):start(s), end(e){};
-
-int distance(){
-    return end-start;
-}
 };
 
 class greeky{
