@@ -1,0 +1,1 @@
+//Hàng đợi thường được sử dụng trong các bài toán tìm kiếm theo chiều rộng, các bài toán tìm kiếm kết qua thông qua các bước lặp trạng thái
