@@ -1,0 +1,10 @@
+input A
+max = A[0]
+count = 1
+for i = 1 to legth(A) - 1:
+    if A[i] > max:
+        max = A[i]
+        count = 1
+    else if A[i] == max:
+        count += 1
+print(max, count)

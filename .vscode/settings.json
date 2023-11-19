@@ -55,6 +55,19 @@
         "tuple": "cpp",
         "utility": "cpp",
         "typeindex": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "cctype": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp",
+        "clocale": "cpp",
+        "csetjmp": "cpp",
+        "csignal": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "ctime": "cpp",
+        "cuchar": "cpp",
+        "map": "cpp",
+        "set": "cpp"
     }
 }

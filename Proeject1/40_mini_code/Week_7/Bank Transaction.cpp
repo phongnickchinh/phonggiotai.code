@@ -1,128 +1,124 @@
-    #include<bits/stdc++.h>
-    using namespace std;
+//Phạm Văn Phong - 20215448 _ 19/11/2023
+#include <iostream>
+#include <vector>
+#include <map>
+#include <set>
+#include <string>
+#include <sstream>
+using namespace std;
+// các biến toàn cục:
+// transactionAmount: mảng lưu số tiền giao dịch của mỗi tài khoản
+// path: mảng lưu đường đi từ đỉnh đích đến đỉnh đích
+// numTransactions: số lượng giao dịch
+// totalMoney: tổng số tiền giao dịch
+// m: độ dài chu trình cần tìm
+// targetAccount: đỉnh đích
+// isCycleFound: biến kiểm tra xem có chu trình độ dài m hay không
+// accountIndex: số lượng tài khoản
+// visited: mảng đánh dấu các đỉnh đã được duyệt
+// uniqueAccounts: tập hợp các tài khoản
+// accountMapping: map lưu tên tài khoản và chỉ số của tài khoản đó trong mảng transactionAmount
+int numTransactions = 0, totalMoney = 0, m, targetAccount,  accountIndex = 0;
+int transactionAmount[100001] = {}, path[100001];
+int isCycleFound = 0;
+bool visited[100001];
+set<string> uniqueAccounts;
+map<string, int> accountMapping;
+vector<int> adjacencyList[100001];
 
-    //cấu trúc của mỗi giao dịch
-    struct Transaction {
-        string from_account;
-        string to_account;
-        int money;
-        string time_point;
-        string atm;
-    };
-
-    //hàm kiểm tra chu trình độ dài k
-    bool hasCycle(map<string, set<string>> account, string& startAcc, unsigned int k) {
-    queue<string> q;
-    map<string, bool> visited;
-    int rank_element[k + 1] = {};
-    q.push(startAcc);
-    visited[startAcc] = true;
-    rank_element[0] = 1;
-
-    for (unsigned int i = 0; i < k-1; i++) {
-        cout << "rank_element[" << i << "] = " << rank_element[i] << endl;
-            while (rank_element[i] > 0) {
-                string u = q.front();
-                cout<<"POP " << u << endl;
-                q.pop();
-                
-                rank_element[i]--;
-                for (const auto& v : account[u]) {
-                    if (!visited[v]) {
-                        q.push(v);
-                        visited[u] = true;
-                        cout<<"PUSH " << v << endl;
-                        rank_element[i + 1]++;
-                    }
-                }
-            }
+//hàm kiểm tra chu trình độ dài k
+void findCycle(int k){
+    //nếu đã tìm thấy chu trình nhưng chưa đến độ dài k thì không cần kiểm tra nữa    
+    if(isCycleFound){
+        return;
     }
-    visited[startAcc] = false;
-    cout << "rank_element[" << k-1 << "] = " << rank_element[k-1] << endl;
-    while(rank_element[k-1] > 0){
-        string u = q.front();
-        cout<<"POP " << u << endl;
-        q.pop();
-        rank_element[k-1]--;
-        for (const auto& v : account[u]) {
-            if(v == startAcc){
-                return true;
-            }
+    //nếu độ dài chu trình bằng k thì kiểm tra xem đỉnh cuối có phải là đỉnh đích không
+    if(k == m){
+        for(int neighbor : adjacencyList[path[k-1]])
+            if(neighbor == targetAccount)
+                isCycleFound = 1;
+        return;
+    }
+    //nếu chưa đủ k đỉnh thì tiếp tục duyệt các đỉnh kề với đỉnh trước đó
+    for(int neighbor : adjacencyList[path[k - 1]]){
+        if(!visited[neighbor]){
+            path[k] = neighbor;
+            visited[neighbor] = true;
+            findCycle(k+1);
+            visited[neighbor] = false;
         }
     }
-    return false;
 }
 
-
-    // hàm xử lý các câu truy vấn
-    void processQueries(map<string, set<string>> account_map, const vector<Transaction>& transactions) {
-        int number_transactions = transactions.size();
-        int total_money_transaction = 0;
-        set<string> account_set;
-        map<string, int> money_transferred_from;
-
-        for (const auto& transaction : transactions) {
-            //Tổng tiền giao dịch
-            total_money_transaction += transaction.money;
-            account_set.insert(transaction.from_account);
-            account_set.insert(transaction.to_account);
-
-            //Tổng tiền được gửi từ mỗi tài khoản
-            money_transferred_from[transaction.from_account] += transaction.money;
+int main(){
+    //freopen("test.txt", "r", stdin);
+    //lệnh này giúp tăng tốc độ đọc và ghi trên cin và cout
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    string sender, receiver, atmCode;
+    cin >> sender; //biến vừa có chức năng nhận lệnh, vừa có chức năng nhận tên tài khoản
+    while(sender[0] != '#'){
+        //tiền xử lí dữ liệu
+        cin >> receiver >> m >> atmCode >> atmCode;
+        numTransactions++;
+        totalMoney += m;
+        if(uniqueAccounts.find(sender) == uniqueAccounts.end()){
+            accountMapping[sender] = accountIndex++;
+        }      
+        if(uniqueAccounts.find(receiver) == uniqueAccounts.end()){
+            accountMapping[receiver] = accountIndex++;
         }
-
-        //Xử lý các câu truy vấn
-        string query;
-        while (getline(cin, query) && query != "#") {
-            istringstream iss(query);
-            string command;
-            iss >> command;
-            
-            if (command == "?number_transactions") {
-                //In ra số lượng giao dịch
-                cout << number_transactions << endl;
-            } else if (command == "?total_money_transaction") {
-                //In ra tổng tiền giao dịch
-                cout << total_money_transaction << endl;
-            } else if (command == "?list_sorted_accounts") {
-                for (const auto& account : account_set) {
-                    //In ra danh sách tài khoản được sắp xếp theo thứ tự từ điển
-                    cout << account << " ";
+        transactionAmount[accountMapping[sender]] += m;
+        uniqueAccounts.insert(sender);
+        uniqueAccounts.insert(receiver);
+        adjacencyList[accountMapping[sender]].push_back(accountMapping[receiver]);
+        cin >> sender;
+    }
+    cin >> sender; 
+    while(sender[0] != '#'){
+        if(sender[1] == 't'){
+            //lệnh ?total_money_transaction_from
+            if(sender[28] == 'm'){
+                cin >> sender;
+                if(uniqueAccounts.find(sender) != uniqueAccounts.end()){
+                    cout << transactionAmount[accountMapping[sender]] << endl;
                 }
-                cout << endl;
-            } else if (command == "?total_money_transaction_from") {
-                string account;
-                iss >> account;
-                //In ra tổng tiền được gửi từ một tài khoản
-                cout << money_transferred_from[account] << endl;
-            } else if (command == "?inspect_cycle") {
-                string account;
-                unsigned int k;
-                iss >> account >> k;
-                //In ra 1 nếu có chu trình độ dài k, ngược lại in ra 0
-                cout << (hasCycle(account_map, account, k) ? 1 : 0) << endl;
+                
+                else
+                    cout << 0 << endl;
+            }
+            //lệnh ?total_money_transaction
+            else{
+                cout << totalMoney << endl;
             }
         }
-    }
-
-
-    int main() {
-        vector<Transaction> transactions; //danh sách các giao dịch
-        map<string, set<string>> account_map; //danh sách các tài khoản gửi và nhận tiền, sử dụng cho tìm kiếm chu trình
-        string line;
-        freopen("test.txt", "r", stdin);
-        while (getline(cin, line) && line != "#") {
-            Transaction transaction;
-            istringstream iss(line);
-            iss >> transaction.from_account >> transaction.to_account >> transaction.money >> transaction.time_point >> transaction.atm;
-            transactions.push_back(transaction);
-            if(transaction.from_account != transaction.to_account){
-                account_map[transaction.from_account].insert(transaction.to_account);
+        //lệnh ?inspect_cycle
+        else if(sender[1] == 'i'){
+            cin >> sender >> m;
+            isCycleFound = 0;
+            targetAccount = accountMapping[sender];
+            path[0] = targetAccount;
+            visited[targetAccount] = true;
+            findCycle(1);
+            visited[targetAccount] = false;
+            if(isCycleFound){
+                cout << 1 << endl;
+            }
+            else{
+                cout << 0 << endl;
             }
         }
-
-        //gọi hàm xử lý các câu truy vấn
-        processQueries(account_map, transactions);
-
-        return 0;
+        //leehnj ?list_sorted_accounts:
+        else if(sender[1] == 'l'){
+            for(string account : uniqueAccounts)
+                cout << account << " ";
+            cout << endl;
+        }
+        //lệnh ?number_transactions:
+        else if(sender[1] == 'n'){
+            cout << numTransactions << endl;
+        }
+        cin >> sender;
     }
+    return 0;
+}
