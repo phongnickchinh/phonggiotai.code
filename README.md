@@ -1,4 +1,3 @@
 # phongiotai.code
-trong này bao gồm 40 bài code thiếu nhi và 1 bài tập lớn nhỏ nhỏ
-thêm cả thuật toán ứng dụng
+This place stores all the code I've ever coded in the subjects (actually not all, a few are lost).
 
