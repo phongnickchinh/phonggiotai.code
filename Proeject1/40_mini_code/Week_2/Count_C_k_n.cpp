@@ -7,7 +7,7 @@ int Remember_ar[N][N];
 //lưu vào Remember_ar
 
 //tính toán tổ hợp chập k của n:
-void C_k_n( int k, int n){
+void C( int k, int n){
 for (int i = 0; i <=n; i++){
     Remember_ar[0][i]=1; 
 }
@@ -22,13 +22,13 @@ for (int i = 0; i <=n; i++){
     }
     
 }
-void in_ra(int k, int n){
+void in_ra_C(int k, int n){
     cout<<Remember_ar[k][n];
 }
 int main(){
     int k,n;
     cin>>k>>n;
-    C_k_n(k,n);//tính toán tổ hợp chập k của n:
-    in_ra(k,n);
+    C(k,n);//tính toán tổ hợp chập k của n:
+    in_ra_C(k,n);
     return 0;
 }

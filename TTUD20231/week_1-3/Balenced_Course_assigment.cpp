@@ -9,14 +9,14 @@ using namespace std;
 int Couser_teacher[M][M],time_overlap[M][M], result[M];
 int appear[M]={0};
 int  teacher, course;
-//last_solution để lưu lại kết quả cuối 
+//last_solution để lưu lại kết quả cuối
 int last_solution=INT_MAX;
 
 //hàm check xem xếp môn học k cho gv v có hợp lệ hay không
 bool check(int k, int v){
     if(Couser_teacher[v][k]==0) return false; //gv cần biết dạy môn học
     //gv đã dạy một môn nào đó trước k, mà môn đó lại trùng thời gian với k thì chịu:
-    for(int i=1; i<k; i++) { 
+    for(int i=1; i<k; i++) {
         if(time_overlap[i][k]==1&&result[i]==v) return false;
     }
     return true;

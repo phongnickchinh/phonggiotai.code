@@ -4,18 +4,18 @@ priority_queue<int, vector<int>, greater<int>> number_list;
 
 int main(){
     string key;
-    string ppp;
-    while(cin>>key){
+    while(true){
+        scanf("%s", &key);
         if(key=="#") break;
         if(key=="PUSH"){
             int n;
-            cin>>n;
+            scanf("%d", &n);
             number_list.push(n);
         }
         if(key=="POP"){
-            ppp.push_back(number_list.top());
-            ppp.push_back('/n');
+            printf("%d\n", number_list.top());
             number_list.pop();
         }
     }
+    return 0;
 }
