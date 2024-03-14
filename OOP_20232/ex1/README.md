@@ -1,0 +1,1 @@
+Xin chào hãy chạy file main để thực hiện chương trình!!!
