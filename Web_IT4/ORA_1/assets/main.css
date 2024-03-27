@@ -1,0 +1,125 @@
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border-spacing: 0;
+}
+
+h3 {
+font-family: 'Roboto', sans-serif;
+font-weight: bold;
+color: brown;
+font-size: 14px;
+}
+
+.left-bar-part-tittle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 3%;
+    font-size: 16px;
+}
+
+.left-bar{
+    /* độ rộng cố định */
+    width: 285px;
+}
+
+.left-bar-part-inner{
+    padding: 10px 10px 30px 10px;
+    background-color: #f1f1ec;
+}
+ul{
+    padding: 0px 0px 0px 5px;
+    margin: 0;
+}
+.list-choose :hover{
+    background-color: #e0e8e9;
+}
+.list-choose li{
+    display: list-item;
+    list-style-type: none;
+    border-bottom: 1px solid #d3d3d3;
+
+}
+.list-choose li a{
+    text-decoration: none;
+    display: block;
+    padding: 10px 0px 10px 0px;
+    font-size: 13px;
+    font-family: Helvetica, sans-serif;
+    color: #337ab7;
+}
+
+.list-choose li a:hover {
+    color: rgb(136, 1, 1);
+}
+
+.col-fix-80-dynamic {
+    width: 100%;
+    vertical-align: top;
+    padding: 10px 10px 10px 10px;
+}
+
+.main-content-inner{
+    display: block;
+    justify-content: center;
+    padding: 10px 10px 5px 50px;
+    
+}
+.main-content-inner-title{
+    display: flex;
+    border-bottom: 1px solid #d3d3d3;
+    justify-content: center;
+}
+.main-content-inner-title h3{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: brown;
+    font-size: 16px;
+}
+.main-content-inner-part{
+    display: block;
+    padding: 10px 10px 10px 10px;
+    background-color: #f1f1ec;
+    width: 100%;
+}
+
+.row {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+.row h3{
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    color: brown;
+    font-size: 16px;
+}
+.col-md-3, .col-md-4,    .col-md-6{
+    display: block;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border: 3px solid #FF9900;
+    line-height: 5px;
+}
+
+.name-col{
+    font: 14px "Segoe UI", "Helvetica Neue", "Droid Sans", Arial, Tahoma, Geneva, Sans-serif;
+}
+.col-md-3 img{
+
+    /* đổ bóng chéo xuống góc phải dưới */
+    box-shadow: 5px 5px 5px #888888;
+}
+.name-col strong{
+    font-size: 14px;
+}
