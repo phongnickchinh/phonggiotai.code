@@ -3,6 +3,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "ex3.Main",
+      "projectName": "phonggiotai.code_d8662b58"
+    },
+    {
+      "type": "java",
       "name": "Test",
       "request": "launch",
       "mainClass": "OOP_20232.ex2.exsecise1.Test",
