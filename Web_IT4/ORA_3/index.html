@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORA#1</title>
+    <link rel="stylesheet" href="assets/main.css">
+
+</head>
+<body>
+    <table class="main-table">
+        <tr>
+            <table>
+                <tr>
+                    <td class="col-fix-20">
+                        <div class="left-bar">
+                            <div class="left-bar-inner">
+                                <div class="left-bar-part">
+                                    <div class="left-bar-part-inner">
+                                        <div class="left-bar-part-inner-title">
+                                            <h3 class="left-bar-part-tittle">
+                                                <img src="/Web_IT4/ORA_1/assets/0080785e6bdca582fccd.jpg" alt="avatar" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+                                                PHẠM VĂN PHONG
+                                            </h3>
+                                        </div>
+                                        <ul class="list-choose">
+                                            <li> <a href="#">Thư báo</a> </li>
+                                            <li> <a href="#">Đổi mật khẩu</a> </li>
+                                            <li> <a href="#">Cấp lại mật khẩu Email trường</a> </li>
+                                            <li> <a href="#">Thoát đăng nhập</a> </li>
+                                            <li> <a href="#">Thông tin mật khẩu Email cấp mới</a> </li>
+                                            <li> <a href="#">Xác nhận khai báo y tế</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="left-bar-part">
+                                    <div class="left-bar-part-inner">
+                                        <div class="left-bar-part-inner-title">
+                                            <h3 class="left-bar-part-tittle">
+                                                QUẢN LÍ HỒ SƠ SINH VIÊN
+                                            </h3>
+                                        </div>
+                                        <ul class="list-choose">
+                                            <li> <a href="#">Thông tin sinh viên</a></li>
+                                            <li> <a href="#"> Cập nhập thông tin cá nhân</a></li>
+                                            <li> <a href="#">Thông tin lớp sinh viên</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br><div class="left-bar-part">
+                                    <div class="left-bar-part-inner">
+                                        <div class="left-bar-part-inner-title">
+                                            <h3 class="left-bar-part-tittle">
+                                                ĐÀO TẠO
+                                            </h3>
+                                        </div>
+                                        <ul class="list-choose">
+                                            <li> <a href="#">Chương trình đào tạo</a></li>
+                                            <li> <a href="#">Kế hoạch học tập</a></li>
+                                            <li> <a href="#">Kết quả học tập</a></li>
+                                            <li> <a href="#">Đồ án - tốt nghiệp</a></li>
+                                            <li> <a href="#">Thời khoá biểu tạm thời</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br><div class="left-bar-part">
+                                    <div class="left-bar-part-inner">
+                                        <div class="left-bar-part-inner-title">
+                                            <h3 class="left-bar-part-tittle">
+                                                TƯ VẤN TRỰC TUYẾN
+                                            </h3>
+                                        </div>
+                                        <ul class="list-choose">
+                                            <li> <a href="#">Xác nhận khai báo y tế </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br><div class="left-bar-part">
+                                    <div class="left-bar-part-inner">
+                                        <div class="left-bar-part-inner-title">
+                                            <h3 class="left-bar-part-tittle">
+                                                TÀI CHÍNH HỌC VỤ
+                                            </h3>
+                                        </div>
+                                        <ul class="list-choose">
+                                            <li> <a href="#">Thông tin công nợ học phí</a></li>
+                                            <li> <a href="#">Thanh toán học phí trực tuyến</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br><div class="left-bar-part">
+                                    <div class="left-bar-part-inner">
+                                        <div class="left-bar-part-inner-title">
+                                            <h3 class="left-bar-part-tittle">
+                                                DỊCH VỤ HÀNH CHÍNH
+                                            </h3>
+                                        </div>
+                                        <ul class="list-choose">
+                                            <li> <a href="#">Thư báo</a> </li>
+                                            <li> <a href="#">Đổi mật khẩu</a> </li>
+                                            <li> <a href="#">Cấp lại mật khẩu Email trường</a> </li>
+                                            <li> <a href="#">Thoát đăng nhập</a> </li>
+                                            <li> <a href="#">Thông tin mật khẩu Email cấp mới</a> </li>
+                                            <li> <a href="#">Xác nhận khai báo y tế</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="col-fix-80-dynamic">
+                        <div class= "main-content">
+                            <div class="main-content-inner">
+                                <div class="main-content-inner-title">
+                                    <h3 class="main-content-tittle">
+                                        THÔNG TIN CÁ NHÂN
+                                    </h3>
+                                </div>
+                                <div class="row", style="">
+                                    <h3 id="need_change" onclick="change_info_inner(this.event, this.id)">THÔNG TIN CÁ NHÂN_20215448</h3>
+                                    <img src="/Web_IT4/ORA_1/assets/delete.png" alt="delete" style="width: 16px; height: 16px; align-self:center;" onclick="delete_group_item()">
+                                    <p id="1121123" onclick="add_info_item(this.event, this.id)">&lt; add_info_item&gt;</p>
+                                    <p onclick="add_group_item()">&gt;add_group_item&gt;</p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="/Web_IT4/ORA_1/assets/0080785e6bdca582fccd.jpg" alt="avatar" style="width: 200px;">
+                                        <div>
+                                            <p style="text-align: center;"><strong>MSSV:</strong> 20215448</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span class="name-col" id="">
+                                            <div id="1123456111" class="infor_field1" style="display:flex;" onclick="change_info_innerP(this.event, this.id)" >
+                                                <p><strong>năm vào trường </strong></p>
+                                                <p><strong>:&nbsp;</strong></p>
+                                                <p>2021</p>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <div id="12121111" class="infor_field1" style="display:flex;" onclick="change_info_innerP(this.event, this.id)" >
+                                                <p><strong>Họ và tên </strong></p>
+                                                <p><strong>:&nbsp;</strong></p>
+                                                <p>Phạm Văn Phong</p>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h3>THÔNG TIN HỌC TẬP</h3>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="name-col" id="">
+                                            <div id="1111111" class="infor_field1" style="display:flex;" onclick="change_info_innerP(this.event, this.id)" >
+                                                <p><strong>Năm TN cấp 3 </strong></p>
+                                                <p><strong>:&nbsp;</strong></p>
+                                                <p>2021</p>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+
+                                    </div>
+                                </div>
+                                <div class="row" >
+                                    <h3 id="need_change" onclick="change_info_inner(this.event, this.id)">THÔNG TIN CÁ NHÂN</h3>
+                                    <img src="/Web_IT4/ORA_1/assets/delete.png" alt="delete" style="width: 16px; height: 16px; align-self:center;" onclick="delete_group_item()">
+                                    <p id="1121123" onclick="add_info_item(this.event, this.id)">&lt; add_info_item&gt;</p>
+                                    <p onclick="add_group_item()">&gt;add_group_item&gt;</p>
+                                </div>
+                                <hr>
+                                <div class="row" style="display: block;" >
+                                    <div class="col-md-6" >
+                                        <span class="name-col" id="">
+                                            <div id="1111" class="infor_field1" style="display:flex;" onclick="change_info_innerP(this.event, this.id)" >
+                                                <p><strong>Năm TN cấp 3 </strong></p>
+                                                <p><strong>:&nbsp;</strong></p>
+                                                <p>2021</p>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </tr>
+    </table>
+</body>
+<script>
+function change_info_inner(event, heheid) {
+
+    var need_change = document.getElementById(heheid);
+    // Kiểm tra xem nếu thẻ hiện tại đã là một thẻ input hay không
+    if (need_change.firstChild.tagName === "INPUT") {
+        // Nếu là thẻ input, chờ cho đến khi nhấn Enter để lưu
+        console.log("change_suscess");
+        if (event.key === "Enter") {
+            // Lấy giá trị mới từ thẻ input bên trong need_change
+            var value = need_change.firstChild.value;
+            //chuyển value thành chữ hoa
+            need_change.innerHTML = value.toUpperCase();
+            // Gán lại sự kiện onclick
+            need_change.onclick = change_info_inner;
+        }
+    } else {
+        // Nếu không phải là thẻ input, chuyển đổi thành thẻ input
+        var currentValue = need_change.innerText;
+        need_change.innerHTML = "<input type='text' value='" + currentValue + "'>";
+        // Xoá sự kiện onclick tạm thời
+        need_change.removeAttribute("onclick");
+        // Gán sự kiện keyup để kiểm tra lệnh Enter
+        need_change.firstChild.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                // Gọi lại hàm change_info_inner với sự kiện keyup
+                change_info_inner(event, heheid);
+            }
+        });
+    }
+}
+
+function change_info_innerP(event, heheid) {
+
+    
+    var need_change = document.getElementById(heheid);
+
+    //lấy ra danh sách thẻ p trong thẻ div
+    var listChild = need_change.getElementsByTagName("p");
+    // Kiểm tra xem nếu thẻ p1 p3 hiện tại đã là một thẻ input hay không
+    if (listChild[0].firstChild.tagName === "INPUT") {
+        // Nếu là thẻ input, chờ cho đến khi nhấn Enter để lưu
+        console.log("change_suscess");
+        if (event.key === "Enter") {
+            console.log("change_suscess PP");
+            // Lấy giá trị mới từ thẻ input bên trong need_change
+            var value0 = listChild[0].firstChild.value;
+            var value2 = listChild[2].firstChild.value;
+
+            //xoas thẻ input và thêm thẻ p
+            listChild[0].innerHTML = "<strong>" + value0 + "</strong>"
+            listChild[2].innerHTML = value2;
+            // Gán lại sự kiện onclick
+            console.log(need_change);
+            need_change.onclick = change_info_innerP;
+        }
+    } else {
+        // Nếu không phải là thẻ input, chuyển đổi thành thẻ input
+        var currentValue2 = listChild[2].innerText;
+        var currentValue0 = listChild[0].innerText;
+
+        listChild[0].innerHTML = "<input type='text' value='" + currentValue0 + "'>";
+        listChild[2].innerHTML = "<input type='text' value='" + currentValue2 + "'>";
+        // Xoá sự kiện onclick tạm thời
+        need_change.removeAttribute("onclick");
+        // Gán sự kiện keyup để kiểm tra lệnh Enter
+        listChild[2].addEventListener("keyup", function(event) {
+            console.log("gọi lại hàm2")
+            if (event.key === "Enter") {
+                // Gọi lại hàm change_info_inner với sự kiện keyup
+                change_info_innerP(event, heheid);
+            }
+        });
+        listChild[0].addEventListener("keyup", function(event) {
+            console.log("gọi lại hàm0")
+            if (event.key === "Enter") {
+                // Gọi lại hàm change_info_inner với sự kiện keyup
+                change_info_innerP(event, heheid);
+            }
+        });
+
+    }
+
+
+    
+}
+    
+    function add_group_item() {
+    /* <div class="row" >
+            <h3 id="need_change" onclick="change_info_inner(this.event, this.id)">THÔNG TIN CÁ NHÂN</h3>
+                                    <img src="/Web_IT4/ORA_1/assets/delete.png" alt="delete" style="width: 16px; height: 16px; align-self:center;" onclick="delete_group_item()">
+                                    <p id="1121123" onclick="add_info_item(this.event, this.id)">&lt; add_info_item&gt;</p>
+                                    <p onclick="add_group_item()">&gt;add_group_item&gt;</p>
+                                </div>
+                                <hr>
+                                <div class="row" style="display: block;" >
+                                    <div class="col-md-6" >
+                                        <span class="name-col" id="">
+                                            <div id="1111" class="infor_field1" style="display:flex;" onclick="change_info_innerP(this.event, this.id)" >
+                                                <p><strong>Năm TN cấp 3 </strong></p>
+                                                <p><strong>:&nbsp;</strong></p>
+                                                <p>2021</p>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>  */
+
+        //tạo ra các thẻ mới giống thế này
+
+        //tạo ra thẻ div mới
+        var new_div = document.createElement("div");
+        new_div.className = "row";
+        //tạo ra thẻ h3 mới
+        var new_h3 = document.createElement("h3");
+        new_h3.innerHTML = "Group Iinfo item_20215448";
+        new_h3.onclick = function(event) {
+            change_info_inner(this.event, this.id);
+        };
+        new_h3.id = Math.floor(Math.random() * 1000000);
+        //tạo ra thẻ img mới
+        var new_img = document.createElement("img");
+        new_img.src = "/Web_IT4/ORA_1/assets/delete.png";
+        new_img.alt = "delete";
+        new_img.style = "width: 16px; height: 16px; align-self:center;";
+        new_img.onclick = function(event) {
+            delete_group_item();
+        };
+        //tạo ra thẻ p mới
+        var new_p1 = document.createElement("p");
+        new_p1.innerHTML = "&lt; add_info_item&gt;";
+        new_p1.id = Math.floor(Math.random() * 1000000);
+        new_p1.onclick = function(event) {
+            add_info_item(this.event, this.id);
+        };
+        //tạo ra thẻ p mới
+        var new_p2 = document.createElement("p");
+        new_p2.innerHTML = "&gt;add_group_item&gt;";
+        new_p2.onclick = function(event) {
+            add_group_item();
+        };
+        //thêm thẻ h3 vào thẻ div
+        new_div.appendChild(new_h3);
+        //thêm thẻ img vào thẻ div
+        new_div.appendChild(new_img);
+        //thêm thẻ p1 vào thẻ div
+        new_div.appendChild(new_p1);
+        //thêm thẻ p2 vào thẻ div
+        new_div.appendChild(new_p2);
+
+        //thêm thẻ div này vào thẻ div class row cuối cùng
+        var parent = document.getElementsByClassName("main-content-inner")[0];
+        parent.appendChild(new_div);
+        //tạo ra thẻ hr mới
+        var new_hr = document.createElement("hr");
+        //thêm thẻ hr vào thẻ div
+        parent.appendChild(new_hr);
+        //tạo ra thẻ div mới
+        var new_div1 = document.createElement("div");
+        new_div1.className = "row";
+        new_div1.style = "display: block;";
+        //tạo ra thẻ div mới
+        var new_div2 = document.createElement("div");
+        new_div2.className = "col-md-6";
+        //tạo ra thẻ span mới
+        var new_span = document.createElement("span");
+        new_span.className = "name-col";
+        new_span.id = Math.floor(Math.random() * 1000000);
+        //tạo ra thẻ div mới
+        var new_div3 = document.createElement("div");
+        new_div3.id = Math.floor(Math.random() * 1000000);
+        new_div3.className = "infor_field1";
+        new_div3.style = "display:flex;";
+        new_div3.onclick = function(event) {
+            change_info_innerP(this.event, this.id);
+        };
+        //tạo ra 3 thẻ p mới
+        var new_p3 = document.createElement("p");
+        var new_p4 = document.createElement("p");
+        var new_p5 = document.createElement("p");
+        //gán giá trị cho thẻ p
+        new_p3.innerHTML = "<strong>Item info Name_20215448</strong>";
+        new_p4.innerHTML = "<strong>:&nbsp;</strong>";
+        new_p5.innerHTML = "insert new info";
+        //thêm thẻ p vào thẻ div
+        new_div3.appendChild(new_p3);
+        new_div3.appendChild(new_p4);
+        new_div3.appendChild(new_p5);
+        //thêm thẻ div vào thẻ span
+        new_span.appendChild(new_div3);
+        //thêm thẻ span vào thẻ div
+        new_div2.appendChild(new_span);
+        //thêm thẻ div vào thẻ div
+        new_div1.appendChild(new_div2);
+        //thêm thẻ div vào thẻ div
+        parent.appendChild(new_div1);
+
+
+
+        
+    }
+
+    function add_info_item(evnt, heheid){
+        //gọi thẻ p
+        var need_change = document.getElementById(heheid);
+        //tìm thẻ cha của thẻ p
+        var parent = need_change.parentElement;
+        //tìm thẻ hàng xóm có class name là row
+        var target_row= parent.nextElementSibling.nextElementSibling;
+        console.log(target_row);
+        //tìm trong thẻ row thẻ div có class là infor_field
+        console.log(target_row);
+        //tìm thẻ div con có class infor_field1
+        var target_div = target_row.getElementsByClassName("infor_field1")[0];
+        console.log(target_div);
+        //tạo 1 thẻ div mới y hệt ngay bên duóiw onclick="change_info_innerP(this.event, this.id)"
+        var new_div = document.createElement("div");
+        new_div.className = "infor_field" +Math.floor(Math.random() * 1000000);
+        new_div.style = "display:flex;";
+        new_div.onclick = function(event) {
+            change_info_innerP(this.event, this.id);
+            };
+        //id chuỗi ngẫu nhiên
+        var id = Math.floor(Math.random() * 1000000);
+        new_div.id = id;
+        //tạo 3 thẻ p mới có 
+        var new_p1 = document.createElement("p");
+        var new_p2 = document.createElement("p");
+        var new_p3 = document.createElement("p");
+        //gán giá trị cho thẻ p
+        new_p1.innerHTML = "<strong>Item info Name</strong>";
+        new_p2.innerHTML = "<strong>:&nbsp;</strong>";
+        new_p3.innerHTML = "insert new info";
+
+        //thêm thẻ p vào thẻ div
+        new_div.appendChild(new_p1);
+        new_div.appendChild(new_p2);
+        new_div.appendChild(new_p3);
+        //thêm thẻ div mới vào sau thẻ div cần thêm
+        target_row.insertBefore(new_div, target_div.nextElementSibling);
+
+
+
+    }
+
+    function delete_group_item() {
+        
+    }
+</script>
+</html>
