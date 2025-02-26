@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include<math.h>
+#include<time.h>
 //mảng chứa giải pháp tại cột i:
 int result[1000];
 int number_sol=0;
 int n;
 int banco[1000][1000];
-char yes='n';
+char yes='n', conti='n';
 
 //check if the new queen not eat any other queen
 int check(int i, int k){
@@ -61,15 +62,23 @@ void Try(int k){
 }
 
 int main(){
-    printf("nhap vao do lon ban co n:");
-    scanf("%d", &n);
-    printf("y: print all board, r: Print simple, n: not print?(y/r/n)");
-    scanf(" %c", &yes);
-    for(int i=1; i<=n; i++){
-        result[i]=-1000;
+    do{
+        printf("nhap vao do lon ban co n:");
+        scanf("%d", &n);
+        printf("y: print all board, r: Print simple, n: not print?(y/r/n)");
+        scanf(" %c", &yes);
+        clock_t begin = clock();
+        for(int i=1; i<=n; i++){
+            result[i]=-1000;
+        }
+        Try(1);
+        printf("number of solution: %d", number_sol);
+        clock_t end = clock();
+        printf("\nTime run: %.6f s\n", (float)(end - begin) / CLOCKS_PER_SEC);
+        printf("ban co muon thuc hien 1 ban co khac?(y/n)\n");
+        scanf("%c", &conti);
     }
-    Try(1);
-    printf("number of solution: %d", number_sol);
+    while(conti!='n');
     return 0;
 
 }
