@@ -15,7 +15,7 @@ int main()
     d = a1 + b1;
     if ((a2+b2) >= 10) d++;
     if (d!=0) cout << d << c;
-    else printf("%", c);
+    else printf("%lld", c);
     return 0;
 
 }
